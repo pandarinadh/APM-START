@@ -1,0 +1,10 @@
+in terminal enter below commands
+node –v
+npm –v
+ng new Angular4app
+cd Angular4app
+ng serve
+
+to change the port from 4200 to other one
+ng serve --host 0.0.0.0 –port 4205 
+ng g component new-cmp
