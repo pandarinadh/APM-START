@@ -1,19 +1,47 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { IProduct } from './product';
 
 @Component({
   selector: 'pm-products',
-  templateUrl: './product-list.component.html'
+  templateUrl: './product-list.component.html',
+  styleUrls: ['./product-list.component.css']  
   })
 
-export class ProductListComponent {
+export class ProductListComponent implements OnInit{
+  constructor(){
+    this.filterProducts = this.products;
+    this.listFilter = "cart";
+  }
+
+  performFilter(filterBy: string): IProduct[] {
+   filterBy = filterBy.toLocaleLowerCase();
+   return this.products.filter(
+      (product: IProduct) => product.ProductName.toLocaleLowerCase().indexOf(filterBy) !== -1
+     );
+  }
+  filterProducts: any;
+
+  ngOnInit(): void {
+    console.log('init called');
+  }
   title: string = 'Product List';
   showImage = false;
-  listFilter = "cart";
-   products= [
+  
+  _listFilter: string;
+
+  get listFilter(): string{
+    return this._listFilter;
+  }
+  set listFilter(value:string){
+    this._listFilter = value;
+    this.filterProducts = this.listFilter ? this.performFilter(this.listFilter) : this. products
+  }
+
+   products : IProduct[]= [
     {
       "productId":2,
       "ProductName": "Gardent Cart",
-      "ProductCode": "001",
+      "ProductCode": "001-temp1",
       "reelaseDate": "March 18, 2018",
       "description": "15 gallon capacity",
       "price": 32.99,
@@ -23,7 +51,7 @@ export class ProductListComponent {
     {
       "productId":3,
       "ProductName": "Hammer",
-      "ProductCode": "002",
+      "ProductCode": "002-temp2",
       "reelaseDate": "March 19, 2018",
       "description": "Steel",
       "price": 3.99,
@@ -34,4 +62,5 @@ export class ProductListComponent {
   toggleImage(): void {
     this.showImage = !this.showImage;
   }
+
 }

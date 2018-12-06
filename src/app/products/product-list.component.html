@@ -29,12 +29,12 @@
                     <th>5 Star Rating</th>
                 </thead>
                 <tbody>
-                    <tr *ngFor='let product of products'>
+                    <tr *ngFor='let product of filterProducts'>
                         <td>
                             <img *ngIf ='showImage' [src] = 'product.imageUrl' [title]='product.ProductName'>
                         </td>
                         <td>{{ product.ProductName }}</td>
-                        <td>{{ product.ProductCode }}</td>
+                        <td>{{ product.ProductCode | convertToSpaces: '-'}}</td>
                         <td>{{ product.reelaseDate }}</td>
                         <td>{{ product.description }}</td>
                         <td>{{ product.price | currency: 'USD': 'symbol' : '1.2-2'}}</td>
