@@ -10,7 +10,7 @@ import { IProduct } from './product';
 export class ProductListComponent implements OnInit{
   constructor(){
     this.filterProducts = this.products;
-    this.listFilter = "cart";
+    this.listFilter = "";
   }
 
   performFilter(filterBy: string): IProduct[] {
@@ -55,7 +55,7 @@ export class ProductListComponent implements OnInit{
       "reelaseDate": "March 19, 2018",
       "description": "Steel",
       "price": 3.99,
-      "starRating": 4.8,
+      "starRating": 2.8,
       "imageUrl": "https://openclipart.org/download/14358/mystica-Hammer.svg"
     }
   ];
@@ -63,4 +63,7 @@ export class ProductListComponent implements OnInit{
     this.showImage = !this.showImage;
   }
 
+  onRatingClicked(message: string): void {
+    this. title = message;
+  }
 }
