@@ -1,5 +1,9 @@
 ng serve to start the application
 
+reference
+
+https://github.com/deborahk/angular-gettingstarted
+
 in terminal enter below commands
 node –v
 npm –v

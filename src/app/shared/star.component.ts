@@ -11,7 +11,7 @@ import { Component, OnChanges, Input, EventEmitter, Output } from "@angular/core
 
 export class StarComponent implements OnChanges {
     ngOnChanges(): void {
-        this.starWidth = this.rating * 75 /5;
+        this.starWidth = this.rating * 200 /5;
     }
     @Input()  rating: number;
     starWidth: number;
