@@ -11,7 +11,7 @@ import { $ } from "protractor";
 })
 export class PorductService{
 
-    productApiURL: string = '/APM-START/api/products/products.json' 
+    productApiURL: string = 'http://localhost:90/api/product/getallproducts' 
 
     constructor (private http1: HttpClient) {}
 

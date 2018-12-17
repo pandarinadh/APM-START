@@ -40,7 +40,9 @@ export class ProductListComponent implements OnInit{
               products => { this.products = products;
                 this.filterProducts = this.products;
               },
-              error => this.errorMessage = <any> error
+              error => {this.errorMessage = <any> error
+                console.log(this.errorMessage);
+              }
               
             );
             
