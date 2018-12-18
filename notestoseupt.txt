@@ -16,3 +16,10 @@ ng serve --host 0.0.0.0 –port 4205
 ng g component new-cmp
 
 npm install bootstrap font-awesome
+
+to generate the welcome file and other angular file
+ng g c home/welcome --flat
+
+ng means angular, g means generate c means component flat means no contents.
+
+ng g c products/product-detail --flat
