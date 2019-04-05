@@ -30,3 +30,5 @@ ng g m products/product --flat -m app
 ng g m shared/shared --flat -m products/product.module
 
 ng g m app-routing --flat -m app
+
+ng g m products/product-routing --flat -m products/product.module

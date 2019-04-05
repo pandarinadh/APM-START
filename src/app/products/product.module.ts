@@ -4,14 +4,12 @@ import { ProductDetailComponent } from './product-detail.component';
 import { ConvertToSpacesPipe } from '../shared/convert-to-spaces.pipe';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
+import { ProductRoutingModule } from './product-routing.module';
 
 @NgModule({
   imports: [
-    RouterModule.forChild([
-      {path: 'products', component: ProductListComponent},
-      {path: 'products/:id', component: ProductDetailComponent}
-    ]),
-    SharedModule
+    SharedModule,
+    ProductRoutingModule
   ],
   declarations: [
     ProductListComponent,
