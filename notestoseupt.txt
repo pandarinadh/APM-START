@@ -23,3 +23,10 @@ ng g c home/welcome --flat
 ng means angular, g means generate c means component flat means no contents.
 
 ng g c products/product-detail --flat
+
+
+ng g m products/product --flat -m app
+
+ng g m shared/shared --flat -m products/product.module
+
+ng g m app-routing --flat -m app
